@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sauvignon Blanc Optimizer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <!-- Custom fonts for this template -->
+    <!-- <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/freelancer.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+    <div id="loading" class="text-center">
+      <div id="loading-image" class="h-100 row align-items-center">
+        <div class="col-lg">
+          <img class="rounded-circle" src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading...">
+          <h4>LOADING...</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Sauvignon Blanc Optimizer</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#map">Map</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#maxTemp">Max Temp</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#minTemp">Min Temp</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#precip">Precipitation</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#humid">Humidity</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">My Location</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- header -->
+    <div class="video-header wrap">
+      <div class="fullscreen-video-wrap">
+        <video autoplay loop>
+          <source src="{{ url_for('static', filename='videos/mountain-film-2.mp4') }}" type="video/mp4">
+          <source src="{{ url_for('static', filename='videos/mountain-film-2.ogv') }}" type="video/ogg">
+        </video>
+        <div class="header-overlay">
+          <div class="header-content text-white">
+            <h1 class="text-uppercase mb-0">Who Doesn't Like Sauvignon Blanc?</h1>
+            <p>Your friendly web-application designed to provide you with relevant info on grape cultivating locations, optimized for Sauvignon Blanc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- intro section -->
+    <section class="bg-primary text-white mb-0" id="intro">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Explanitorium</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-6 mr-auto">
+            <p class="lead">What makes really great wine? It takes more than love and patience to make an excellent vintage. We sought out to find the trends that create a beautiful glass of vino around the world. Using our love and skill for data we identified that climate and soil composition tell the story of how great wine-grapes are created.</p>
+          </div>
+          <div class="col-lg-6 ml-auto">
+            <p class="lead">Sauvignon Blanc is one of the most popular wines in the world, and is the most profitable wine in the world. The characteristics the Sauvignon Blanc grapes lend itself to being the front runner. It thrives in cool climates, but can develop desirable flavors in both cool and warm environments. This has allowed it to be grown across the globe. It buds early, grows quickly, and can produce several harvest within the same year. All seasons are Sauvignon Blanc season.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- map leaflet section -->
+    <section class="bg-white portfolio" id="map">
+      <iframe class="col-lg-8 offset-lg-2 text-center" src="{{ url_for('static', filename='iFrames/d3.html') }}" height="820" frameborder="0" scrolling="no"></iframe>
+      <div class="col-lg-10 mx-auto">
+        <br>
+        <p class="lead">Location, location, location! The map above indicates the Sauvignon Blanc vineyards ranked by <a href="https://www.winemag.com/">Wine Enthusiast Magazine</a> for the year 2016. Each marker represents a different appellation. By clicking on a marker the legend will update with relevant information for that locale. The container above the legend allows you to filter the selected vineyards further by rank - Best Rated: x&gt;=90, Greatly Rated: 90&gt;x&gt;=85, Moderately Rated: x&gt;85.</p>
+      </div>
+    </section>
+
+    <!-- line charts section -->
+    <section class="bg-primary text-white mb-0" id="charts">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Graphical Dancing</h2>
+        <hr class="star-light mb-5">
+      </div>
+    </section>
+
+    <!-- chart 1 section -->
+    <section class="bg-white portfolio" id="maxTemp">
+      <h3 class="text-uppercase ml-5 mt-4">Average Max Temp</h3>
+      <div class="row m-0">
+        <iframe class="col-lg-8 mr-auto" src="{{ url_for('static', filename='iFrames/d3_2.html') }}" height="820" frameborder="0" scrolling="yes"></iframe>
+        <div class="col-lg-4 ml-auto">
+          <br>
+          <p class="lead">The average max temperature for Sauvignon Blanc growing locations exhibit mild fluctuations over the months, as ideal climates for cultivating Sauvignon Blanc are moderate and generally do not exceed 85 degrees fahrenheit.</p>
+          <p class="lead"> In cooler climates, the grape may produce wines with noticeable acidity and flavors of grass, green bell peppers, tropical fruit, and floral notes. In warmer climates, it can develop more tropical fruit notes but also grapefruit and and peach notes and may require earlier harvesting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- chart 2 section -->
+    <section class="bg-white portfolio" id="minTemp">
+      <div class="row">
+        <div class="col-lg-8 ml-auto">
+          <h3 class="text-uppercase ml-5 mt-4">Average Min Temp</h3>
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="col-lg-4 mr-auto">
+          <br>
+          <p class="lead">The average minimum temperature of Sauvignon Blanc growing locations are lower than some other popular wines such as Cabernet Sauvignon. The average minimum temperature for Sauvignon Blanc growth is roughly 40 degrees fahrenheit. This allows for more versatile growing regions, more resilient crops, and a varietal that can take on many flavor characteristics because of its adaptability.</p>
+          <p class="lead">There is a correlation between the temperature fluctuations of daily maximum and minimum temperatures during growing season and wine ratings. The fluctuations are ideal for grape growth as the stress develops flavors in the grapes that translate to complexity in the wine.</p>
+        </div>
+        <iframe class="col-lg-8 ml-auto" src="{{ url_for('static', filename='iFrames/d3_3.html') }}" height="820" frameborder="0" scrolling="yes"></iframe>
+      </div>
+    </section>
+
+    <!-- chart 3 section -->
+    <section class="bg-white portfolio" id="precip">
+      <h3 class="text-uppercase ml-5 mt-4">Average Precipitation</h3>
+      <div class="row m-0">
+        <iframe class="col-lg-8 mr-auto" src="{{ url_for('static', filename='iFrames/d3_3.html') }}" height="820" frameborder="0" scrolling="yes"></iframe>
+        <div class="col-lg-4 ml-auto">
+          <br>
+          <p class="lead">Precipitation plays a crucial role to the development of the fruit throughout the growing season. Excessive water stress (lack of water) early in the fruit growth can be very damaging, although water stress during the development can develop flavors in the fruit by slowing the growth of the berry. </p>
+          <p class="lead">Precipitation and soil makeup are closely tied and when considered together can strongly impact the development of the fruit and the subsequent wine. The organic material and flora in the soil respond to the available water content. Soil components respond differently to holding moisture, for example, sand does not hold water well, but clay retains enough moisture to nourish plant life, but creates an ideal amount of water stress, making clay an ideal component in soil used for wine cultivation. These factors, combined with precipitation, play a part vital in the flavor evolution of Sauvignon Blanc grapes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- chart 4 section -->
+    <section class="bg-white portfolio" id="humid">
+      <div class="row">
+        <div class="col-lg-8 ml-auto">
+          <h3 class="text-uppercase ml-5 mt-4">Average Humidity</h3>
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="col-lg-4 mr-auto">
+          <br>
+          <p class="lead">The presence of humidity at the right time in the Sauvignon Blanc fruit growth can have remarkable effects of the development, which is why we were able to detect a notable correlation of humidity levels and Wine Enthusiast ratings.</p>
+          <p class="lead">Just as flora in the soil affects the outcome of the wine, so does the flora above the soil. Very high and very low humidity can adversely influence grape development but moderate and consistent humidity can support the growth of wanted cultures leading to some of the most sought after wines in the world.</p>
+        </div>
+        <iframe class="col-lg-8 ml-auto" src="{{ url_for('static', filename='iFrames/d3_4.html') }}" height="820" frameborder="0" scrolling="yes"></iframe>
+      </div>
+    </section>
+
+
+    <!-- Form Section -->
+    <section id="contact" class="bg-white">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0 mt-4">Infomatrix on a Location: Find Out!</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+              <form method="POST" role="form" class="form-horizontal" action="sb_request">
+                <div class="control-group">
+                  <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label><h3>Latitude, Longitude Geo Coordinates</h3></label>
+                    <input type="text" name="geo" placeholder="Lat, Lon">
+                  </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-xl">Click Me!</button>
+                </div>
+                <!-- <div class="control-group">
+                  <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                    <label><h3>Type Your Address: [Address], [City], State/Region, Country</h3></label>
+                    <input type="text" name="addy" placeholder="Address">
+                  </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-xl">Click Me!</button>
+                </div> -->
+              </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- GET user data -->
+    <section id="sb_data" class="bg-white">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Stats</h2>
+      </div>
+    </section>
+
+    <section id="sb_data" class="bg-white">
+      <div class="bg-white container-fluid">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-2">
+            <h4>Geo Coordinates = {{ sb.lat_lon }}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 offset-lg-2">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Soil Properties: {{ sb.publish_date }}</th>
+                  <th scope="col">Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Carbon Content</th>
+                  <td>{{ sb.carbon }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Clay Amount</th>
+                  <td>{{ sb.clay }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">pH Levels</th>
+                  <td>{{ sb.ph }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cation Exchange Capacity</th>
+                  <td>{{ sb.cec }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Water Wilting Point</th>
+                  <td>{{ sb.water_wp }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Bulk Density</th>
+                  <td>{{ sb.bulk }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-lg-4">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Climate Months_2016</th>
+                  <th scope="col">Avg Max Temp F</th>
+                  <th scope="col">Avg Min Temp F</th>
+                  <th scope="col">Avg Precipitation /in</th>
+                  <th scope="col">Avg Humidity %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">January</th>
+                  <td>{{ sb.jan_avg_max_tempF }}</td>
+                  <td>{{ sb.jan_avg_min_tempF }}</td>
+                  <td>{{ sb.jan_precipIn }}</td>
+                  <td>{{ sb.jan_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">February</th>
+                  <td>{{ sb.feb_avg_max_tempF }}</td>
+                  <td>{{ sb.feb_avg_min_tempF }}</td>
+                  <td>{{ sb.feb_precipIn }}</td>
+                  <td>{{ sb.feb_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">March</th>
+                  <td>{{ sb.mar_avg_max_tempF }}</td>
+                  <td>{{ sb.mar_avg_min_tempF }}</td>
+                  <td>{{ sb.mar_precipIn }}</td>
+                  <td>{{ sb.mar_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">April</th>
+                  <td>{{ sb.apr_avg_max_tempF }}</td>
+                  <td>{{ sb.apr_avg_min_tempF }}</td>
+                  <td>{{ sb.apr_precipIn }}</td>
+                  <td>{{ sb.apr_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">May</th>
+                  <td>{{ sb.may_avg_max_tempF }}</td>
+                  <td>{{ sb.may_avg_min_tempF }}</td>
+                  <td>{{ sb.may_precipIn }}</td>
+                  <td>{{ sb.may_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">June</th>
+                  <td>{{ sb.jun_avg_max_tempF }}</td>
+                  <td>{{ sb.jun_avg_min_tempF }}</td>
+                  <td>{{ sb.jun_precipIn }}</td>
+                  <td>{{ sb.jun_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">July</th>
+                  <td>{{ sb.jul_avg_max_tempF }}</td>
+                  <td>{{ sb.jul_avg_min_tempF }}</td>
+                  <td>{{ sb.jul_precipIn }}</td>
+                  <td>{{ sb.jul_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">August</th>
+                  <td>{{ sb.aug_avg_max_tempF }}</td>
+                  <td>{{ sb.aug_avg_min_tempF }}</td>
+                  <td>{{ sb.aug_precipIn }}</td>
+                  <td>{{ sb.aug_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">September</th>
+                  <td>{{ sb.sep_avg_max_tempF }}</td>
+                  <td>{{ sb.sep_avg_min_tempF }}</td>
+                  <td>{{ sb.sep_precipIn }}</td>
+                  <td>{{ sb.sep_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">October</th>
+                  <td>{{ sb.oct_avg_max_tempF }}</td>
+                  <td>{{ sb.oct_avg_min_tempF }}</td>
+                  <td>{{ sb.oct_precipIn }}</td>
+                  <td>{{ sb.oct_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">November</th>
+                  <td>{{ sb.nov_avg_max_tempF }}</td>
+                  <td>{{ sb.nov_avg_min_tempF }}</td>
+                  <td>{{ sb.nov_precipIn }}</td>
+                  <td>{{ sb.nov_humidPerc }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">December</th>
+                  <td>{{ sb.dec_avg_max_tempF }}</td>
+                  <td>{{ sb.dec_avg_min_tempF }}</td>
+                  <td>{{ sb.dec_precipIn }}</td>
+                  <td>{{ sb.dec_humidPerc }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Credits to:</h4>
+            <p class="lead mb-0">Alex Buitron
+              <br>Mindy Barlett</br>
+              Christina Wang</br>
+              Elyse Lam</p>
+              </p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Drunken_Pandas</h4>
+            <p class="lead mb-0">A team comprised of advanced MoFo coding assassins
+              <div class="text-center mt-4">
+                  <a class="btn btn-md btn-outline-light" href="https://github.com/buitron/new_new_world/">
+                    <i class="fa fa-code-fork mr-1"> Fork It!</i>
+                  </a>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Drunken_Pandas 2018</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <script type="text/javascript" language="javascript">
+      window.onload = function() {
+        document.getElementById('loading').style.display = 'none';
+      };
+    </script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <!-- <script src="{{ url_for('static', filename='js/freelancer.min.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/content.js') }}"></script>
+
+  </body>
+
+</html>
